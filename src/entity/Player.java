@@ -33,7 +33,7 @@ public class Player extends Entity {
         //set player initial spawn
         worldX = gamePanel.tileSize * 9; //player position on world map not screen
         worldY = gamePanel.tileSize * 6; //player position on world map not screen
-        speed = 4;
+        speed = 20;
         direction = "down";
     }
 
