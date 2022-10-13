@@ -12,19 +12,27 @@ public class Player extends Entity {
     GamePanel gamePanel;
     KeyHandler keyHandler;
 
+    //Screen-Coordinates
+    public final int screenX;
+    public final int screenY;
+
     //Create Player
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
 
+        //Center player on screen
+        screenX = gamePanel.screenWidth / 2 - (gamePanel.tileSize / 2);
+        screenY = gamePanel.screenHeight / 2 - (gamePanel.tileSize / 2);
         setDefaultValues();
         getPlayerImage();
     }
 
     //Set defaults
     public void setDefaultValues() {
-        x = 100;
-        y = 100;
+        //set player initial spawn
+        worldX = gamePanel.tileSize * 9; //player position on world map not screen
+        worldY = gamePanel.tileSize * 6; //player position on world map not screen
         speed = 4;
         direction = "down";
     }
@@ -46,23 +54,23 @@ public class Player extends Entity {
     }
     public void update() {
         if(keyHandler.upPressed == true) {
-            y -= speed;
+            worldY -= speed;
             direction = "up";
         }
 
         else if(keyHandler.downPressed == true) {
             direction = "down";
-            y += speed;
+            worldY += speed;
         }
 
         else if(keyHandler.leftPressed == true) {
             direction = "left";
-            x -= speed;
+            worldX -= speed;
         }
 
         else if(keyHandler.rightPressed == true) {
             direction = "right";
-            x += speed;
+            worldX += speed;
         }
 
         //Used to swap sprites every twelve frames so simulate walking
@@ -107,6 +115,6 @@ public class Player extends Entity {
                 break;
         }
 
-        graphic2.drawImage(image, x, y, gamePanel.tileSize, gamePanel.tileSize, null);
+        graphic2.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
     }
 }
