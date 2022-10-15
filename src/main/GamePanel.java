@@ -1,6 +1,7 @@
 package main;
 
 import entity.Player;
+import main.object.SuperObject;
 import tile.TileManager;
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ public class GamePanel extends JPanel  implements Runnable{
 
     //World Settings
     public final int maxWorldCol = 30;
-    public final int maxWorldRow = 28;
+    public final int maxWorldRow = 32;
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
     //FPS
@@ -36,6 +37,15 @@ public class GamePanel extends JPanel  implements Runnable{
     //Instantiate Player
     public Player player = new Player(this, keyHandler);
 
+    //Instantiate collisionChecker
+    public CollisionChecker collisionChecker = new CollisionChecker(this);
+
+    //Instantiate / store objects
+    public SuperObject objects[] = new SuperObject[10]; //array to hold objects to display later
+
+    //Instantiate AssetHandler
+    AssetHandler assetHandler = new AssetHandler(this);
+
     //Create Game Panel
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight)); //set window size
@@ -43,6 +53,10 @@ public class GamePanel extends JPanel  implements Runnable{
         this.setDoubleBuffered(true); //better rendering performance
         this.addKeyListener(keyHandler);
         this.setFocusable(true); //Game Panel is always ready to receive input
+    }
+
+    public void setupGame() {
+        assetHandler.setObject(); //MUST BE CALLED PRIOR TO CAME START
     }
 
     //Create Game Thread for Timing(s)
@@ -76,7 +90,7 @@ public class GamePanel extends JPanel  implements Runnable{
                 drawCount++;
             }
             if(timer >= 1000000000)  {
-                System.out.println("FPS: " + drawCount);
+                //System.out.println("FPS: " + drawCount); DEBUG FPS STMT
                 drawCount = 0;
                 timer = 0;
             }
@@ -111,6 +125,7 @@ public class GamePanel extends JPanel  implements Runnable{
     //Update Player Position
     public void update() {
         player.update();
+        System.out.printf("\n(%d, %d)",player.worldX / tileSize,player.worldY / tileSize); //use to find player on world map
     }
 
     //Draw onto JPanel
@@ -121,6 +136,13 @@ public class GamePanel extends JPanel  implements Runnable{
 
         //draw tile
         tileManager.draw(graphic2); //needs to be layer under player
+
+        //draw object(s)
+        for(int i = 0; i < objects.length; i++) {
+            if(objects[i] != null) { //check if slot is empty
+                objects[i].draw(graphic2, this);
+            }
+        }
 
         //draw player
         player.draw(graphic2);

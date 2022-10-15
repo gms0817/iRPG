@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 //Parent Class
@@ -12,4 +13,8 @@ public class Entity {
 
     public int spriteCounter = 0;
     public int spriteNumber = 1;
+
+    //Setup collisionBox
+    public Rectangle collisionBox;
+    public boolean collisionOn = false;
 }
