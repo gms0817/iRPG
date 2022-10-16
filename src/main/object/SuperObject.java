@@ -10,6 +10,9 @@ public class SuperObject {
     public String name;
     public boolean collision = false;
     public int worldX, worldY;
+    public Rectangle collisionBox = new Rectangle(0, 0, 48, 48); //default area for object collision box
+    public int collisionBoxDefaultX = 0;
+    public int collisionBoxDefaultY = 0;
 
     //Draw object(s)
     public void draw(Graphics2D graphics2D, GamePanel gamePanel) {

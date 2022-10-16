@@ -16,5 +16,6 @@ public class Entity {
 
     //Setup collisionBox
     public Rectangle collisionBox;
+    public int collisionBoxDefaultX, collisionBoxDefaultY;
     public boolean collisionOn = false;
 }

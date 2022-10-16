@@ -20,7 +20,7 @@ public class TileManager {
         tile = new Tile[10]; //can adjust as needed
         mapTileNum = new int[gamePanel.maxWorldCol][ gamePanel.maxWorldRow]; //will hold map data from map txt file
         getTileImage();
-        loadMap("/maps/worldMap02.txt"); //loads map01
+        loadMap("/maps/worldMap01.txt"); //loads map01
     }
 
     public void getTileImage() {

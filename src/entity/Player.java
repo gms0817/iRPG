@@ -16,6 +16,9 @@ public class Player extends Entity {
     public final int screenX;
     public final int screenY;
 
+    //Keep track of objects
+    int keyCount = 0;
+
     //Create Player
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         this.gamePanel = gamePanel;
@@ -27,9 +30,11 @@ public class Player extends Entity {
 
         //Instantiate collisionBox
         collisionBox = new Rectangle();        //x, y, width, height
-        collisionBox.x = 6;
+        collisionBox.x = 10;
         collisionBox.y = 22;
-        collisionBox.width = 36;
+        collisionBoxDefaultX = collisionBox.x;
+        collisionBoxDefaultY = collisionBox.y;
+        collisionBox.width = 28;
         collisionBox.height = 28;
 
         setDefaultValues();
@@ -41,7 +46,7 @@ public class Player extends Entity {
         //set player initial spawn
         worldX = gamePanel.tileSize * 18; //player position on world map not screen
         worldY = gamePanel.tileSize * 24; //player position on world map not screen
-        speed = 4;
+        speed = 5;
         direction = "down";
     }
 
@@ -61,20 +66,20 @@ public class Player extends Entity {
         }
     }
     public void update() {
-        if(keyHandler.upPressed == true || keyHandler.downPressed == true || keyHandler.leftPressed == true || keyHandler.rightPressed == true) {
-            if(keyHandler.upPressed == true) {
+        if(keyHandler.upPressed || keyHandler.downPressed || keyHandler.leftPressed || keyHandler.rightPressed) {
+            if(keyHandler.upPressed) {
                 direction = "up";
             }
 
-            else if(keyHandler.downPressed == true) {
+            else if(keyHandler.downPressed) {
                 direction = "down";
             }
 
-            else if(keyHandler.leftPressed == true) {
+            else if(keyHandler.leftPressed) {
                 direction = "left";
             }
 
-            else if(keyHandler.rightPressed == true) {
+            else if(keyHandler.rightPressed) {
                 direction = "right";
             }
 
@@ -82,21 +87,17 @@ public class Player extends Entity {
             collisionOn = false; //reset default collision value;
             gamePanel.collisionChecker.checkTile(this); //check for collision with the player
 
+            //Check object collision
+            int objIndex = gamePanel.collisionChecker.checkObject(this, true);
+            pickupObject(objIndex);
+
             //if false, player can move
-            if(collisionOn == false) {
-                switch(direction) {
-                    case "up":
-                        worldY -= speed;
-                        break;
-                    case "down":
-                        worldY += speed;
-                        break;
-                    case "left":
-                        worldX -= speed;
-                        break;
-                    case "right":
-                        worldX += speed;
-                        break;
+            if(!collisionOn) {
+                switch (direction) {
+                    case "up" -> worldY -= speed;
+                    case "down" -> worldY += speed;
+                    case "left" -> worldX -= speed;
+                    case "right" -> worldX += speed;
                 }
             }
 
@@ -114,35 +115,52 @@ public class Player extends Entity {
 
     }
 
+    public void pickupObject(int index) {
+        if(index != 999) {
+            String objectName = gamePanel.objects[index].name;
+            switch(objectName) { //object specific actions
+                case "key":
+                    keyCount++;
+                    gamePanel.objects[index] = null;
+                    break;
+                case "door":
+                    if(keyCount > 0) {
+                        gamePanel.objects[index] = null; //remove door
+                        keyCount--;
+                    }
+                    break;
+            }
+        }
+    }
+
     public void draw(Graphics2D graphic2) {
         BufferedImage image = null;
 
-        switch(direction) {
-            case "up":
-                if(spriteNumber == 1)
+        switch (direction) {
+            case "up" -> {
+                if (spriteNumber == 1)
                     image = up1;
-                if(spriteNumber == 2)
+                if (spriteNumber == 2)
                     image = up2;
-                break;
-            case "down":
-                if(spriteNumber == 1)
+            }
+            case "down" -> {
+                if (spriteNumber == 1)
                     image = down1;
-                if(spriteNumber == 2)
+                if (spriteNumber == 2)
                     image = down2;
-                break;
-
-            case "left":
-                if(spriteNumber == 1)
+            }
+            case "left" -> {
+                if (spriteNumber == 1)
                     image = left1;
-                if(spriteNumber == 2)
+                if (spriteNumber == 2)
                     image = left2;
-                break;
-            case "right":
-                if(spriteNumber == 1)
+            }
+            case "right" -> {
+                if (spriteNumber == 1)
                     image = right1;
-                if(spriteNumber == 2)
+                if (spriteNumber == 2)
                     image = right2;
-                break;
+            }
         }
 
         graphic2.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);

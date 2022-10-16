@@ -20,7 +20,7 @@ public class GamePanel extends JPanel  implements Runnable{
 
     //World Settings
     public final int maxWorldCol = 30;
-    public final int maxWorldRow = 32;
+    public final int maxWorldRow = 33;
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
     //FPS
@@ -41,7 +41,7 @@ public class GamePanel extends JPanel  implements Runnable{
     public CollisionChecker collisionChecker = new CollisionChecker(this);
 
     //Instantiate / store objects
-    public SuperObject objects[] = new SuperObject[10]; //array to hold objects to display later
+    public SuperObject objects[] = new SuperObject[2]; //array to hold objects to display later
 
     //Instantiate AssetHandler
     AssetHandler assetHandler = new AssetHandler(this);

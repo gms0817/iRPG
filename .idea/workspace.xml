@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a5d556d-fcbb-40f4-9094-0d53f13cc8b6" name="Changes" comment="0">
-      <change afterPath="$PROJECT_DIR$/src/main/AssetHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/object/OBJ_Chest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/object/OBJ_Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/object/SuperObject.java" afterDir="false" />
+    <list default="true" id="9a5d556d-fcbb-40f4-9094-0d53f13cc8b6" name="Changes" comment="added tile collision and added a key and chest item. Currently, items cannot be interacted with.">
+      <change afterPath="$PROJECT_DIR$/res/objects/door01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/object/OBJ_Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/maps/worldMap01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/worldMap01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/maps/worldMap02.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/object/OBJ_Chest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/object/OBJ_Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/object/SuperObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tile/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665720570913</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added tile collision and added a key and chest item. Currently, items cannot be interacted with.">
+      <created>1665851226215</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665851226215</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0" />
-    <option name="LAST_COMMIT_MESSAGE" value="0" />
+    <MESSAGE value="added tile collision and added a key and chest item. Currently, items cannot be interacted with." />
+    <option name="LAST_COMMIT_MESSAGE" value="added tile collision and added a key and chest item. Currently, items cannot be interacted with." />
   </component>
 </project>
