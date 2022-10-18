@@ -120,14 +120,21 @@ public class Player extends Entity {
             String objectName = gamePanel.objects[index].name;
             switch(objectName) { //object specific actions
                 case "key":
+                    gamePanel.playSoundEffect(3);
                     keyCount++;
                     gamePanel.objects[index] = null;
                     break;
                 case "door":
                     if(keyCount > 0) {
+                        gamePanel.playSoundEffect(2);
                         gamePanel.objects[index] = null; //remove door
                         keyCount--;
                     }
+                    break;
+                case "speedBoots":
+                    gamePanel.playSoundEffect(1);
+                    speed += 2;
+                    gamePanel.objects[index] = null;
                     break;
             }
         }

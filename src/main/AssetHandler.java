@@ -1,8 +1,8 @@
 package main;
 
-import main.object.OBJ_Chest;
-import main.object.OBJ_Door;
-import main.object.OBJ_Key;
+import object.OBJ_Door;
+import object.OBJ_Key;
+import object.OBJ_SpeedBoots;
 
 public class AssetHandler {
     GamePanel gamePanel;
@@ -22,5 +22,10 @@ public class AssetHandler {
         gamePanel.objects[1] = new OBJ_Door();
         gamePanel.objects[1].worldX = gamePanel.tileSize * 2;
         gamePanel.objects[1].worldY = gamePanel.tileSize * 14;
+
+        //Speed Boots
+        gamePanel.objects[2] = new OBJ_SpeedBoots();
+        gamePanel.objects[2].worldX = gamePanel.tileSize * 12;
+        gamePanel.objects[2].worldY = gamePanel.tileSize * 12;
     }
 }
