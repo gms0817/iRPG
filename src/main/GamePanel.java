@@ -45,9 +45,12 @@ public class GamePanel extends JPanel  implements Runnable{
     //Instantiate AssetHandler
     AssetHandler assetHandler = new AssetHandler(this);
 
+    //Instantiate UI
+    public UI ui = new UI(this);
 
     //Instantiate sound class
-    Sound sound = new Sound();
+    Sound music = new Sound();
+    Sound soundEffect = new Sound();
 
     //Create Game Panel
     public GamePanel() {
@@ -132,7 +135,7 @@ public class GamePanel extends JPanel  implements Runnable{
     //Update Player Position
     public void update() {
         player.update();
-        System.out.printf("\n(%d, %d)",player.worldX / tileSize,player.worldY / tileSize); //use to find player on world map
+        System.out.printf("\n(X: %d, Y: %d)",player.worldX / tileSize,player.worldY / tileSize); //use to find player on world map
     }
 
     //Draw onto JPanel
@@ -154,22 +157,24 @@ public class GamePanel extends JPanel  implements Runnable{
         //draw player
         player.draw(graphic2);
 
+        //draw UI - called here to be in the foreground
+        ui.draw(graphic2);
         graphic2.dispose(); //release any resources being used
     }
 
     //
     public void playMusic(int soundIndex) {
-        sound.setFile(soundIndex);
-        sound.play();
-        sound.loop(); //prevent music from stopping
+        music.setFile(soundIndex);
+        music.play();
+        music.loop(); //prevent music from stopping
     }
 
     public void stopMusic() {
-        sound.stop();
+        music.stop();
     }
 
     public void playSoundEffect(int soundIndex) {
-        sound.setFile(soundIndex);
-        sound.play();
+        soundEffect.setFile(soundIndex);
+        soundEffect.play();
     }
 }

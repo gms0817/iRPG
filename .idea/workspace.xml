@@ -1,37 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a5d556d-fcbb-40f4-9094-0d53f13cc8b6" name="Changes" comment="added sand tile and made world map larger">
-      <change afterPath="$PROJECT_DIR$/res/objects/speedBoots.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/BlueBoyAdventure.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/Dungeon.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/Merchant.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/blocked.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/burning.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/coin.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/cursor.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/cuttree.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/fanfare.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/gameover.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/hitmonster.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/levelup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/parry.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/powerup.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/unlock.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_SpeedBoots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_13_2022_4_55_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_13_2022_4_55_PM__Changes_.xml" afterDir="false" />
+    <list default="true" id="9a5d556d-fcbb-40f4-9094-0d53f13cc8b6" name="Changes" comment="-Added sound effects and music sourced from RyiSnow tutorial on YouTube&#10;-Added a speed boost power up item - speedBoots">
+      <change afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2022_3_39_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_2022_3_39_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/maps/worldMap01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/worldMap01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/object/OBJ_Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/SuperObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665851226215</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-Added sound effects and music sourced from RyiSnow tutorial on YouTube&#10;-Added a speed boost power up item - speedBoots">
+      <created>1666108686146</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666108686146</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0" />
     <MESSAGE value="added tile collision and added a key and chest item. Currently, items cannot be interacted with." />
-    <option name="LAST_COMMIT_MESSAGE" value="added tile collision and added a key and chest item. Currently, items cannot be interacted with." />
+    <MESSAGE value="-Added sound effects and music sourced from RyiSnow tutorial on YouTube&#10;-Added a speed boost power up item - speedBoots" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Added sound effects and music sourced from RyiSnow tutorial on YouTube&#10;-Added a speed boost power up item - speedBoots" />
   </component>
 </project>

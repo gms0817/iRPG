@@ -17,7 +17,7 @@ public class Player extends Entity {
     public final int screenY;
 
     //Keep track of objects
-    int keyCount = 0;
+    public int keyCount = 0;
 
     //Create Player
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
@@ -123,6 +123,7 @@ public class Player extends Entity {
                     gamePanel.playSoundEffect(3);
                     keyCount++;
                     gamePanel.objects[index] = null;
+                    gamePanel.ui.showMessage("You got a key!");
                     break;
                 case "door":
                     if(keyCount > 0) {
@@ -130,11 +131,13 @@ public class Player extends Entity {
                         gamePanel.objects[index] = null; //remove door
                         keyCount--;
                     }
+                    gamePanel.ui.showMessage("You unlocked the door!");
                     break;
                 case "speedBoots":
                     gamePanel.playSoundEffect(1);
                     speed += 2;
                     gamePanel.objects[index] = null;
+                    gamePanel.ui.showMessage("Speed Boost!!");
                     break;
             }
         }

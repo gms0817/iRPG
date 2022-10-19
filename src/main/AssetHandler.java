@@ -25,7 +25,7 @@ public class AssetHandler {
 
         //Speed Boots
         gamePanel.objects[2] = new OBJ_SpeedBoots();
-        gamePanel.objects[2].worldX = gamePanel.tileSize * 12;
-        gamePanel.objects[2].worldY = gamePanel.tileSize * 12;
+        gamePanel.objects[2].worldX = gamePanel.tileSize * 27;
+        gamePanel.objects[2].worldY = gamePanel.tileSize * 15;
     }
 }
